@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zrtrui_rating_o2" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="FsRatingType" sap:label="Consumption/Root View for BP Ratings" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="partner"/>
+                    <PropertyRef Name="grademethod"/>
+                </Key>
+                <Property Name="partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="BP" sap:quickinfo="Character Field with Length 10"/>
+                <Property Name="grademethod" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="GradeMethod" sap:quickinfo="Character Field with Length 10"/>
+                <Property Name="grade" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Grade" sap:quickinfo="Character Field with Length 10"/>
+                <Property Name="tendency" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Tendency" sap:quickinfo="Component of the Version Number"/>
+                <Property Name="id" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="RatingID" sap:quickinfo="Character Field with Length 10"/>
+                <Property Name="ratingtext" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="RatingText" sap:quickinfo="Char 60"/>
+                <Property Name="status" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="RunStatus" sap:quickinfo="Character Field with Length 10"/>
+                <Property Name="statustext" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="StatusText" sap:quickinfo="Char 60"/>
+                <Property Name="testrun" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="TestRun" sap:quickinfo="Single-Character Flag"/>
+                <Property Name="timestamp" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="TimeStamp" sap:quickinfo="Character Field with Length 10"/>
+            </EntityType>
+            <EntityContainer Name="cds_zrtrui_rating_o2_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="FsRating" EntityType="cds_zrtrui_rating_o2.FsRatingType" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="cds_zrtrui_rating_o2.cds_zrtrui_rating_o2_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/sap/ZRTRUI_RATING_SB;v=0001/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://S4X2020.SAP.LAMBWESTON.COM:443/sap/opu/odata/sap/ZRTRUI_RATING_SB;v=0001/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

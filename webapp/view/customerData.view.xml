@@ -1,0 +1,64 @@
+<mvc:View controllerName="com.sap.uploadProgram.upload.controller.customerData"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified">
+    <Page id="page" title="{i18n>title}">
+        <OverflowToolbar id="oTb1" class="sapUiMediumMarginTop">
+			<ToolbarSpacer/>
+			<u:FileUploader class="sapUiTinyMarginBegin" id="FileUploaderid" placeholder="Choose the template file to upload" 
+                    useMultipart="false" width="30%" name="myFileUpload" change="handleValueChange" typeMissmatch="handleTypeMissmatch" 
+                    fileType="xls,xlsx,csv" icon="sap-icon://open-folder" 
+                    iconFirst="true" style="Emphasized" uploadComplete="handleUploadComplete"/>
+            <Button id="submit" text="Submit" type="Default" tooltip="Submit" visible="false" press="submitFile" icon="sap-icon://upload"/>
+            <!-- <Button id="testRun" text="Test Run" type="Default" tooltip="Test Run" visible="false" press="handleUploadComplete" icon="sap-icon://process"/> -->
+			<ToolbarSpacer/>
+		</OverflowToolbar>            
+        <Table id="customerDataTable" inset="false" items="{}" growing="true" growingThreshold="50">
+			<headerToolbar>
+				<OverflowToolbar id="oTb2">
+                    <Title id="idTtl1" text="{i18n>CustomerData}" level="H2"/>
+					<ToolbarSpacer />
+                    <CheckBox id="testRun" text="{i18n>TestRun}" valueState="Information" enabled="false" 
+                        selected="false" select="handleUploadComplete"/>
+					<Button id="idBtnExport" icon="sap-icon://download" press="onExport"/>
+				</OverflowToolbar>
+			</headerToolbar>
+			<columns>
+				<Column id="idColCustomerNo">
+					<Text id="idTxtCustomerNo" text="{i18n>CustomerNo}" />
+				</Column>
+				<Column id="idColRatingProcedure">
+					<Text id="idTxtRatingProcedure" text="{i18n>RatingProcedure}" />
+				</Column>
+				<Column id="idColRating">
+					<Text id="idTxtRating" text="{i18n>Rating}" />
+				</Column>
+				<Column id="idColTrends">
+					<Text id="idTxtTrends" text="{i18n>Trends}" />
+				</Column>
+				<Column id="idColID">
+					<Text id="idTxtID" text="{i18n>ID}" />
+				</Column>
+				<Column id="idColText">
+					<Text id="idTxtText" text="{i18n>Text}" />
+				</Column>
+                <Column id="idColStatus">
+					<Text id="idTxtStatus" text="{i18n>Status}" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem id="idColLI">
+					<cells>						
+						<Text text="{CustomerNo}" />
+						<Text text="{RatingProcedure}" />
+						<Text text="{Rating}" />
+						<Text text="{Trends}" />
+						<Text text="{ID}" />
+						<Text text="{Text}" />
+                        <ObjectStatus id="idOs1" text="Status" state="{Status}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+    </Page>
+</mvc:View>

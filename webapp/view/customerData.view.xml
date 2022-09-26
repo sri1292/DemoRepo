@@ -13,7 +13,7 @@
             <!-- <Button id="testRun" text="Test Run" type="Default" tooltip="Test Run" visible="false" press="handleUploadComplete" icon="sap-icon://process"/> -->
 			<ToolbarSpacer/>
 		</OverflowToolbar>            
-        <Table id="customerDataTable" inset="false" items="{}" growing="true" growingThreshold="50">
+        <Table id="customerDataTable1" inset="false" items="{}" growing="true" growingThreshold="50">
 			<headerToolbar>
 				<OverflowToolbar id="oTb2">
                     <Title id="idTtl1" text="{i18n>CustomerData}" level="H2"/>

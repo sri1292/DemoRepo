@@ -17,7 +17,7 @@ sap.ui.define([
         return Controller.extend("com.sap.uploadProgram.upload.controller.customerData", {
             onInit: function () {
                 var that = this;
-                var sServiceUrl, oModel;
+                var sServiceUrl, oModel, oObject;
                 sServiceUrl = "/sap/opu/odata/sap/ZRTRUI_RATING_SB;v=0001/"; //Fill Service URL here
                 this.oModel = new ODataModel(sServiceUrl);
                 that.getView().setModel(oModel);

@@ -5,7 +5,7 @@
     <Page id="page" title="{i18n>title}">
         <OverflowToolbar id="oTb1" class="sapUiMediumMarginTop">
 			<ToolbarSpacer/>
-			<u:FileUploader class="sapUiTinyMarginBegin" id="FileUploaderid" placeholder="Choose the template file to upload" 
+			<u:FileUploader class="sapUiTinyMarginBegin" id="FileUploaderid1" placeholder="Choose the template file to upload" 
                     useMultipart="false" width="30%" name="myFileUpload" change="handleValueChange" typeMissmatch="handleTypeMissmatch" 
                     fileType="xls,xlsx,csv" icon="sap-icon://open-folder" 
                     iconFirst="true" style="Emphasized" uploadComplete="handleUploadComplete"/>
